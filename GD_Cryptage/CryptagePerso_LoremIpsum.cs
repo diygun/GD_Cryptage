@@ -18,30 +18,36 @@ namespace GD_Cryptage
         // cryptage perso qui ajoute un nombre n a chaque caractere d'une chaine de caractere et qui ka retourne.
         public string CryptText()
         {
-            input = input + lorem;
-            char[] chars = input.ToCharArray();
 
-            for (int i = 0; i < chars.Length; i++)
-            {
-                chars[i] += (char)key;
-            }
+                input = input + lorem;
+                char[] chars = input.ToCharArray();
 
-            return new string(chars);
+                for (int i = 0; i < chars.Length; i++)
+                {
+                    chars[i] += (char)key;
+                }
+
+                return new string(chars);
+
+
         }
         // decryptage qui enleve le nombre n.
         public string DecryptText()
         {
-            char[] chars = input.ToCharArray();
 
-            for (int i = 0; i < chars.Length; i++)
-            {
-                chars[i] -= (char)key;
-            }
+                char[] chars = input.ToCharArray();
 
-            string output = new string(chars);
-            // 414 char a enlever
-            output = output.Replace(lorem, "");
-            return output;
+                for (int i = 0; i < chars.Length; i++)
+                {
+                    chars[i] -= (char)key;
+                }
+
+                string output = new string(chars);
+                // 414 char a enlever
+                output = output.Replace(lorem, "");
+                return output;
+
+
         }
 
 

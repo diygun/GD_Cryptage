@@ -13,6 +13,7 @@ namespace GD_Cryptage
         public Form1()
         {
             InitializeComponent();
+            pictureBox2.BackColor = Color.Transparent;
         }
 
         private void btnCrypter_Click(object sender, EventArgs e)
@@ -25,30 +26,51 @@ namespace GD_Cryptage
 
                 CryptagePerso_LoremIpsum cPerso = new CryptagePerso_LoremIpsum(text_a_crypter, clef);
                 txtCryptePerso.Text = cPerso.CryptText();
-
-            // Appel du cryptage .NET
-
-
             }
-
-
-
         }
-
         private void btnDecrypter_Click(object sender, EventArgs e)
         {
+
             if (!String.IsNullOrEmpty(txtCryptePerso.Text) && !String.IsNullOrEmpty(clePerso.Text))
             {
-                string text_a_decrypter = Convert.ToString(txtCryptePerso.Text);
-                int clef = Convert.ToInt32(clePerso.Text);
+                    string text_a_decrypter = Convert.ToString(txtCryptePerso.Text);
+                    int clef = Convert.ToInt32(clePerso.Text);
 
-                CryptagePerso_LoremIpsum cPerso = new CryptagePerso_LoremIpsum(text_a_decrypter, clef);
+                    CryptagePerso_LoremIpsum cPerso = new CryptagePerso_LoremIpsum(text_a_decrypter, clef);
 
-                txtAcrypter.Text = cPerso.DecryptText();
-
+                    txtAcrypter.Text = cPerso.DecryptText();
 
             }
 
         }
+
+        private void btnCryptNET_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtAcrypter.Text) && !String.IsNullOrEmpty(cleNET.Text))
+            {
+                //  Appel du cryptage personel
+                string text_a_crypter = Convert.ToString(txtAcrypter.Text);
+                string clef = Convert.ToString(cleNET.Text);
+
+                CryptageNET cNET = new CryptageNET(text_a_crypter, clef);
+                txtCrypteDES.Text = cNET.Encrypt();
+            }
+            
+
+        }
+
+        private void btnDecryptNET_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtCrypteDES.Text) && !String.IsNullOrEmpty(cleNET.Text))
+            {
+                string text_a_decrypter = Convert.ToString(txtCrypteDES.Text);
+                string clef = Convert.ToString(cleNET.Text);
+
+                CryptageNET cNET = new CryptageNET(text_a_decrypter, clef);
+                txtAcrypter.Text = cNET.Decrypt();
+            }
+        }
+
+
     }
 }
