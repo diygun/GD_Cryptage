@@ -71,6 +71,15 @@ namespace GD_Cryptage
             }
         }
 
-
+        private void clePerso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (Char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+            //e.Handled = (!char.IsDigit(e.KeyChar));
+            
+        }
     }
 }

@@ -105,7 +105,7 @@ namespace GD_Cryptage
             this.clePerso.Name = "clePerso";
             this.clePerso.Size = new System.Drawing.Size(117, 20);
             this.clePerso.TabIndex = 5;
-            //this.clePerso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clePerso_KeyPress);
+            this.clePerso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clePerso_KeyPress);
             // 
             // txtCrypteDES
             // 
