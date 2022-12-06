@@ -5,7 +5,7 @@
 ## Documentation Crypt-it
 
 Ce document explique brièvement le fonctionnement de Crypt-it, une application de chiffrement de
-texte saisie par l’utilisateur.
+texte saisi par l’utilisateur.
 
 ```
 Cryptage Lorem ipsum
@@ -36,9 +36,9 @@ ante, at suscipit turpis tempor quis. Cras vitae dolor hendrerit, aliquet arcu.
 Il contient 414 caractères. Il peut être modifié à condition d’adapter le nombre de caractère.
 
 ```
-Cryptage .ET (tripleDES)
+Cryptage .NET (tripleDES)
 ```
-La partie .NET du cryptage a été fait avec le cryptage tripleDES. Le cryptage tripleDES est une
+La partie .NET du cryptage a été faite avec le cryptage tripleDES. Le cryptage tripleDES est une
 méthode de cryptage qui utilise la méthode DES (Data Encryption Standard) pour crypter des
 données pour une sécurité maximale. Il est conçu pour crypter à la fois des blocs de données de 64
 bits et des mots de passe de 8 caractères. Il est considéré comme beaucoup plus sûr que le cryptage
